@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <style>
-    body{
+   body{
       background-color: rgb(222, 232, 237);
     }
 .fa-sharp{
@@ -98,14 +98,16 @@
   margin:0px 0px 10px 10px;
 }
 .list-group-flush > .list-group-item > a {
-    text-decoration: none;
+    text-decoration: none !important;
     font-weight:bold;
     color: black;
     margin-left: auto;
+    font-size: 1vw;
 }
 .list-group-flush > .list-group-item > a > p{
   font-weight: lighter;
-  text-align: rleft;
+  text-align: left;
+  font-size: 1vw;
 }
 .list-group-flush > .list-group-item:hover {
   background-color: rgba(0,0,0,0.08);
@@ -129,14 +131,11 @@
   align-items: center;
   justify-content: center;
 }
-.SeeMore > button{
+.SeeMore > a{
   text-decoration: none;
   color: black;
-  padding: 0;
-  border: none;
-  background: none;
 }
-.SeeMore > button:hover {
+.SeeMore > a:hover {
   font-weight:bold;
 }
 .col-xl-2  > .mt-4 > .card-header {
@@ -147,8 +146,6 @@
   font-weight: bolder;
 }
 .copyright{
-  position: sticky;
-  top: 77vh;
   text-align: center;
 }
   </style>
@@ -201,9 +198,9 @@
               <div class="col-xl-2 ">
                 <div class="card mt-4 profile">
                   <div class="card-header">
-                    Featured
+                    More Topics
                   </div>
-                  <ul class="list-group list-group-flush">
+                  <ul class="list-group list-group-flush ">
                     <li class="list-group-item">
                       <form class="SeeMore" action="/technology" method="get">
                         <a href="/technology">Technology</a>
