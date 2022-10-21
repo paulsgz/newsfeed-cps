@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../public/images/title-logo.png" type="image/x-icon" />
+    <title>Newsfeed</title>
+    <link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <style>
+    body{
+      background-color: rgb(222, 232, 237);
+    }
+.fa-sharp{
+  color: rgba(0,0,0,.65);
+  width: 1vw;
+}
+.fa-solid{
+  color: rgba(0,0,0,.65);
+  width: 1vw;
+}
+.navbar{
+    box-shadow: 0px 2px 2px 1px rgba(0,0,0,.1);
+    }
+.navbar-nav > li{
+  margin-left:12px;
+  margin-right:12px;
+}
+.navbar-nav > li > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.navbar-nav > li > a > i{
+  margin-bottom: 7px;
+  margin-right: 10px;
+}
+.navbar-nav > li> a:hover i {
+  color: rgba(0,0,0,1);
+  }
+.fa-house-user {
+  color: rgba(0,0,0,1);   
+}
+.navbar-nav > .border-bottom{
+  box-shadow: 0 4px 2px -2px black;
+}
+.card-body {
+    margin-bottom: 0;
+    padding: 0px;
+}
+.card-footer {
+    padding: 0px;
+}
+.card-footer > .row > .col-md-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+}
+.card-footer > .row > .col-md-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+}
+.card-footer > .row > .col-md-4 > form > button> a{
+    text-decoration: none;
+    color: black;
+    align-items: center;
+}
+.card-footer > .row > .col-md-4 > form > button> a > i{
+  margin-right: 9px;
+}
+.card-footer > .row > .col-md-4 > form:hover{
+  border-radius: 5%;
+  background-color: rgba(0,0,0,0.08);
+}
+.source {
+  margin:5px 3px 0px 7px;
+}
+.card-title {
+  margin:0px 10px 0px 7px;
+  font-weight:bolder;
+}
+.img-fluid {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-top: 10px;
+    margin-bottom: 7px;
+}
+.card-text {
+  margin:0px 0px 10px 10px;
+}
+.list-group-flush > .list-group-item > a {
+    text-decoration: none;
+    font-weight:bold;
+    color: black;
+    margin-left: auto;
+}
+.list-group-flush > .list-group-item > a > p{
+  font-weight: lighter;
+  text-align: rleft;
+}
+.list-group-flush > .list-group-item:hover {
+  background-color: rgba(0,0,0,0.08);
+} 
+.d-flex {
+  margin-right: 150px;
+}
+.featured {
+  position: sticky;
+  top: 84px;
+}
+.profile {
+  position: sticky;
+  top: 84px;
+}
+.SeeMore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.SeeMore > a{
+  text-decoration: none;
+  color: black;
+}
+.SeeMore > a:hover {
+  font-weight:bold;
+}
+.col-xl-2  > .mt-4 > .card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+}
+.copyright{
+  position: sticky;
+  top: 750px;
+  text-align: center;
+}
+  </style>
+  </head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light sticky-top py-0">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse"></div>
+          <a class="navbar-brand " href="#"></a>
+          <img src="../public/images/newsfeed-logo.png" height="60px" width="190px">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="d-flex" role="search" action="/search" method="POST">
+              <input class="form-control me-2" id="search" type="search" name="title" placeholder="Search" aria-label="Search" required>
+              <button class="btn btn-outline-secondary"  type="submit" >Search</button>
+            </form>
+            <ul class="navbar-nav me-auto mb-lg-0 ml-5 ">
+              <li class="nav-item border-bottom">
+                <a class="nav-link" aria-current="page" href="/"><i class="fa-sharp fa-solid fa-house-user fa-xl"></i>Home</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" aria-current="page" href="/gaming"><i class="fa-solid fa-gamepad fa-xl"></i>Gaming</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" aria-current="page" href="/sports"><i class="fa-solid fa-basketball fa-xl"></i>Sports</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" aria-current="page" href="/astronomy"><i class="fa-solid fa-shuttle-space fa-xl"></i>Astronomy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/food"><i class="fa-solid fa-pizza-slice fa-xl"></i>Food</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/travel"><i class="fa-sharp fa-solid fa-earth-americas fa-xl"></i>Travel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/music"><i class="fa-sharp fa-solid fa-music fa-xl"></i>Music</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/arts"><i class="fa-sharp fa-solid fa-paintbrush fa-xl"></i>Arts</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xl-2"></div>
+              <div class="col-xl-2 ">
+                <div class="card mt-4 profile">
+                  <div class="card-header">
+                   More Topics
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <form class="SeeMore" action="/technology" method="get">
+                        <a href="/technology">Technology</a>
+                      </form></li>
+                    <li class="list-group-item"> 
+                      <form class="SeeMore" action="/technology" method="get">
+                      <a href="/politics">Politics</a>
+                    </form>
+                  </li>
+                    <li class="list-group-item">
+                      <form class="SeeMore" action="/technology" method="get">
+                        <a href="/education">Education</a>
+                      </form>
+                    </li>
+                    <li class="list-group-item">
+                      <form class="SeeMore" action="/technology" method="get">
+                        <a href="/engineering">Engineering</a>
+                      </form>
+                    </li>
+                    <li class="list-group-item">
+                      <form class="SeeMore" action="/technology" method="get">
+                        <a href="/humanities">Humanities</a>
+                      </form>
+                    </li>
+                    <li class="list-group-item">
+                      <form class="SeeMore" action="/technology" method="get">
+                        <a href="/environment">Environment</a>
+                      </form>
+                    </li>
+                    <li class="list-group-item">
+                      <form class="SeeMore" action="/technology" method="get">
+                        <a href="/wildlife">Wildlife</a>
+                      </form>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+                
+              <div class="col-xl-4 newsfeed">
+                <% const loadPost = function() { %>
+                <% const nums = new Set(); %> 
+                <% while(nums.size !== numPost) {%> 
+                <%   nums.add(Math.floor(Math.random() * 70) + 1); %> 
+                <% }%> 
+                <% const values = nums.values()%> 
+                <% for(let i=0;i< numPost;i++) { %> 
+                  <% const j = values.next().value%> 
+                  <div class="card mb-3 mt-4">
+                    <h2 class="source"><%=response.data.articles[j].source.name %></h2>
+                    <p class="card-title"><%= response.data.articles[j].title %></p>
+                    <img src="<%=response.data.articles[j].urlToImage %>" class="img-fluid" alt="Responsive image">
+                    <div class="card-body">
+                      <p class="card-text"><%= response.data.articles[j].description.slice(0,350) + "..."%></p>
+                      <div class="card-footer bg-transparent border-success"> 
+                        <div class="row">
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-4">
+                              <form action="" method="">
+                                <button id="button" type="button" class="btn"><a href="<%=response.data.articles[j].url%> "><i class="fa-sharp fa-solid fa-book-open-reader"></i> Read more</a></button>
+                              </form>
+                            </div>
+                            <div class="col-md-4">
+                            </div>  
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              <% } %>
+              <% } %>
+              <% loadPost()%> 
+              <form class="SeeMore" action="" method="GET">
+                  <a href="/">See More</a>
+                </form>
+       
+              </div>
+              <div class="col-xl-2">
+                <div class="card mt-4 featured">
+                  <div class="card-header">
+                    <h4>Featured News</h4>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="<%=response2.data.articles[0].url%>"><%= response2.data.articles[0].title %><p>by <%= response2.data.articles[0].author %></p></a></li>
+                    <li class="list-group-item"><a href="<%=response2.data.articles[1].url%>"><%= response2.data.articles[1].title %><p>by <%= response2.data.articles[1].author %></p></a></li>
+                    <li class="list-group-item"><a href="<%=response2.data.articles[2].url%>"><%= response2.data.articles[2].title %><p>by <%= response2.data.articles[2].author %></p></a></li>
+                    <li class="list-group-item"><a href="<%=response2.data.articles[3].url%>"><%= response2.data.articles[3].title %><p>by <%= response2.data.articles[3].author %></p></a></li>
+                    <li class="list-group-item"><a href="<%=response2.data.articles[4].url%>"><%= response2.data.articles[4].title %><p>by <%= response2.data.articles[4].author %></p></a></li>
+                  </ul>
+                </div>
+                  <div class="copyright">
+                    <p>Copyright &copy Christian Paul Seguiza 2022</p>
+                  </div>
+              </div>
+            </div> 
+          </div>
+    <script src="/javascript/script.js"></script>
+    <script src="https://kit.fontawesome.com/72a73849b0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+</body>
+</html>
