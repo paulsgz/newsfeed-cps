@@ -102,10 +102,12 @@
     font-weight:bold;
     color: black;
     margin-left: auto;
+    font-size: 1vw;
 }
 .list-group-flush > .list-group-item > a > p{
   font-weight: lighter;
-  text-align: rleft;
+  text-align: left;
+  font-size: 1vw;
 }
 .list-group-flush > .list-group-item:hover {
   background-color: rgba(0,0,0,0.08);
@@ -144,8 +146,6 @@
   font-weight: bolder;
 }
 .copyright{
-  position: sticky;
-  top: 77vh;
   text-align: center;
 }
   </style>
@@ -292,12 +292,17 @@
                     <li class="list-group-item"><a href="<%=response2.data.articles[4].url%>"><%= response2.data.articles[4].title %><p>by <%= response2.data.articles[4].author %></p></a></li>
                   </ul>
                 </div>
-                  <div class="copyright">
-                    <p>Copyright &copy Christian Paul Seguiza 2022</p>
-                  </div>
+ 
               </div>
             </div> 
           </div>
+
+          <footer>
+            <div class="copyright mt-4">
+              <p>Copyright &copy Christian Paul Seguiza 2022</p>
+            </div>
+          </footer>
+
     <script src="/javascript/script.js"></script>
     <script src="https://kit.fontawesome.com/72a73849b0.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
