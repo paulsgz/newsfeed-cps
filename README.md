@@ -1,4 +1,4 @@
-# newsfeed-cps
+# newsfeed-cps https://newsfeed-cps.herokuapp.com/
 Newsfeed is a site for reading news articles from different resources about many different aspects of life.
 The site includes news.com API that searches for news articles from different websites returning their own API to the site, before finally returning JSON file to the newsfeed webpage.
 Also includes NASA api to generate images and articles related to astronomy and space.
